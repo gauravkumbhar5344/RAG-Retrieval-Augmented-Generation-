@@ -1,11 +1,24 @@
 import os
 import streamlit as st
-from langchain.document_loaders import TextLoader, PyPDFLoader, Docx2txtLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings.huggingface import HuggingFaceEmbeddings
-from langchain.vectorstores import Chroma
-from langchain.chains import RetrievalQA
+# Document loaders - now in langchain-community
+from langchain_community.document_loaders import TextLoader, PyPDFLoader, Docx2txtLoader
+
+# Text splitter - now in langchain-text-splitters (standalone)
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+
+# Embeddings - now in langchain-huggingface  
+from langchain_huggingface import HuggingFaceEmbeddings
+
+# Vectorstore - install chromadb separately
+from langchain_community.vectorstores import Chroma
+
+# RetrievalQA chain - now in langchain-classic (legacy chains)
+from langchain_classic.chains import RetrievalQA
+
+# Groq LLM - separate integration package (unchanged)
 from langchain_groq import ChatGroq
+
+# Standard library (unchanged)
 from tempfile import NamedTemporaryFile
 from dotenv import load_dotenv
 
